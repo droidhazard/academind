@@ -1,8 +1,10 @@
 const http = require("http");
+const fs = require("fs");
 
 function rqListener(req, res) {
   // console.log(req.url, req.method);
   const url = req.url;
+  const method = req.method;
   if (url === "/") {
     res.setHeader("Content-Type", "text/html");
     res.write("<html>");
@@ -12,6 +14,14 @@ function rqListener(req, res) {
     );
     res.write("</html>");
     return res.end();
+  }
+
+  if (url === "/message" && method === "POST") {
+    fs.writeFileSync("data.txt", "DUMMY");
+    res.statusCode = 302;
+    res.setHeader("Location", "/");
+    return res.end();
+    // console.log(req.body);
   }
   //   console.log(res);
   //   process.exit();
