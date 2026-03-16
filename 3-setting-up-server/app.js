@@ -27,17 +27,20 @@ function rqListener(req, res) {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split("=")[1];
       console.log(message);
-      fs.writeFileSync("data.txt", message);
+      // fs.writeFileSync("data.txt", message); // Blocks code execution until done
+      fs.writeFile("data.txt", message, (err) => {
+        res.statusCode = 302;
+        res.setHeader("Location", "/");
+        return res.end();
+      });
     });
-    res.statusCode = 302;
-    res.setHeader("Location", "/");
-    return res.end();
+
     // console.log(req.body);
   }
   //   console.log(res);
   //   process.exit();
   // res.setHeader("Content-Type", "application/json");
-  res.end();
+  // res.end();
 }
 
 const server = http.createServer(rqListener);
