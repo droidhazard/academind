@@ -1,4 +1,4 @@
-const { registerAccount } = require("./controller");
+const { registerAccount, loginAccount } = require("./controller");
 
 const requestHandler = (req, res) => {
   const url = req.url;
@@ -75,7 +75,7 @@ const requestHandler = (req, res) => {
   }
 
   // * Handle '/login' submission
-  if (url === "login" && method === "POST") {
+  if (url === "/login" && method === "POST") {
     res.setHeader("Content-Type", "text/html");
     const body = [];
 
@@ -83,8 +83,12 @@ const requestHandler = (req, res) => {
       body.push(chunk);
     });
     req.on("end", () => {
-      //
+      loginAccount(body);
     });
+
+    res.statusCode = 302;
+    res.setHeader("location", "/");
+    return res.end();
   }
 };
 
