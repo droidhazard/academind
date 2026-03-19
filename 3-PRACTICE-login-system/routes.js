@@ -50,7 +50,9 @@ const requestHandler = (req, res) => {
     req.on("end", () => {
       registerAccount(body);
     });
-    // ! add redirect here...
+    res.statusCode = 302;
+    res.setHeader("Location", "/");
+    /*
     res.write(`<html>
       <head><title>Practice - Sign Up</title></head>
       <body>
@@ -64,6 +66,7 @@ const requestHandler = (req, res) => {
         <a href="login"><button>Login</button></a>
       </body>
       </html>`);
+      */
     return res.end();
   }
 };
