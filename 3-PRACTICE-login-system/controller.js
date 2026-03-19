@@ -10,4 +10,8 @@ const registerAccount = (body) => {
   });
 };
 
+const loginAccount = (body) => {
+  //
+};
+
 module.exports.registerAccount = registerAccount;
