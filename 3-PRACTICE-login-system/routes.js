@@ -1,4 +1,4 @@
-const fs = require("fs");
+const { registerAccount } = require("./controller");
 
 const requestHandler = (req, res) => {
   const url = req.url;
@@ -48,18 +48,9 @@ const requestHandler = (req, res) => {
     });
 
     req.on("end", () => {
-      let parsedBody = Buffer.concat(body).toString();
-      parsedBody = parsedBody.split("&").join("\n");
-      console.log(parsedBody);
-      fs.readFile("./database.txt", "utf-8", (err, data) => {
-        // console.log("OLD DATA start:", data, "\b:OLD DATA close");
-        fs.writeFile(
-          "./database.txt",
-          `${data}\n&&\n${parsedBody}`,
-          (err) => {},
-        );
-      });
+      registerAccount(body);
     });
+    // ! add redirect here...
     res.write(`<html>
       <head><title>Practice - Sign Up</title></head>
       <body>
