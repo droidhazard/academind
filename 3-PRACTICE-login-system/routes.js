@@ -6,11 +6,34 @@ const requestHandler = (req, res) => {
 
   // * Homepage "/"
   if (url === "/" && method === "GET") {
+    // ^ Styling for banner element
+    const referer = req.headers.referer || null;
+    let bannerMessage, bannerElement, bannerStyle;
+    if (referer.includes("register")) {
+      bannerMessage = "Account registered successfully";
+      bannerStyle =
+        "color: #ffffff;background-color: #00ff00;padding: 2px 10px; margin: 10px -10px;";
+    } else if (referer.includes("login_success")) {
+      bannerMessage = "Logged in successfully";
+      bannerStyle =
+        "color: #ffffff;background-color: #0fa7c9;padding: 2px 10px; margin: 10px -10px;";
+    } else if (referer.includes("login_failed")) {
+      bannerMessage = "Incorrect username or password";
+      bannerStyle =
+        "color: #ffffff;background-color: #dd1c1f;padding: 2px 10px; margin: 10px -10px;";
+    } else {
+      bannerMessage = "";
+      bannerStyle = "";
+    }
+    bannerElement = `<div style="${bannerStyle}">${bannerMessage}</div>`;
+
+    // ^ Send main homepage content
     res.setHeader("Content-Type", "text/html");
     res.write(`<html>
       <head><title>Practice - Homepage</title></head>
       <body>
         <h2>Welcome to practice home</h2>
+        ${bannerElement}
         <a href="login"><button>Login</button></a>
         <a href="register"><button>Register</button></a>
       </body>
@@ -70,6 +93,7 @@ const requestHandler = (req, res) => {
     });
 
     res.statusCode = 302;
+    res.setHeader("BannerMessage", "register_success");
     res.setHeader("Location", "/");
     return res.end();
   }
@@ -78,12 +102,14 @@ const requestHandler = (req, res) => {
   if (url === "/login" && method === "POST") {
     res.setHeader("Content-Type", "text/html");
     const body = [];
+    let result = false;
 
     req.on("data", (chunk) => {
       body.push(chunk);
     });
     req.on("end", () => {
-      loginAccount(body);
+      result = loginAccount(body);
+      console.log(result);
     });
 
     res.statusCode = 302;
