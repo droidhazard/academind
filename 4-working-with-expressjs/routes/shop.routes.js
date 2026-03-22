@@ -12,7 +12,7 @@ router.get("/", (req, res, next) => {
 
 // * Handle 404 page
 router.use((req, res) => {
-  res.status(404).sendFile(path.join(rootDir, "views", "page-not-found.html"));
+  res.status(404).sendFile(path.join(rootDir, "views", "404-not-found.html"));
 });
 
 module.exports = router;
