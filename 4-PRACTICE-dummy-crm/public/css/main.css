@@ -40,9 +40,13 @@ body {
   width: 100%;
   text-decoration: none;
   color: #d1d1d1;
+  transition: 0.2s ease-in-out;
 }
 .main-header__list-item a:hover,
 .main-header__list-item a:active,
 .main-header__list-item a.active {
   background: #414141;
+}
+.main-header__list-item a.active:hover {
+  background: #323232;
 }
