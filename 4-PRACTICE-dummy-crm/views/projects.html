@@ -22,7 +22,35 @@
     </header>
 
     <main class="main-container">
-      <h1>At a glance</h1>
+      <form action="/projects" method="POST" class="form-container">
+        <h2>Create a Project</h2>
+        <input type="text" name="title" placeholder="Title" />
+        <input type="text" name="contact" placeholder="Contact" />
+        <input type="text" name="assigned" placeholder="Assigned to" />
+        <input type="text" name="priority" placeholder="Priority" />
+        <input type="text" name="duedate" placeholder="Due Date" />
+
+        <button type="submit" class="submit">Create Project</button>
+      </form>
+
+      <div class="card-container">
+        <div class="card">
+          <img src="task.png" alt="contact icon" />
+          <section>
+            <p class="card-text-primary">Front End</p>
+            <p class="card-text-secondary">Urgent</p>
+            <p class="card-text-secondary">01-01-2026</p>
+          </section>
+        </div>
+        <div class="card">
+          <img src="task.png" alt="contact icon" />
+          <section>
+            <p class="card-text-primary">Backend</p>
+            <p class="card-text-secondary">Normal</p>
+            <p class="card-text-secondary">02-02-2026</p>
+          </section>
+        </div>
+      </div>
     </main>
   </body>
 </html>
