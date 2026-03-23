@@ -10,6 +10,7 @@ body {
   font-family: sans-serif;
 }
 
+/* * NAVBAR */
 .main-header {
   width: 100%;
   background-color: #111111;
@@ -49,4 +50,81 @@ body {
 }
 .main-header__list-item a.active:hover {
   background: #323232;
+}
+
+/* * SUBMISSION FORM */
+.form-container {
+  /* border: 2px solid orange; */
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  max-width: 90%;
+  margin: auto;
+  padding-top: 2rem;
+}
+
+.form-container input {
+  margin-bottom: 10px;
+  background-color: #414141;
+  /* color: #969696; */
+  color: white;
+  border: none;
+  height: 50px;
+  padding: 0 10px;
+  transition: 0.1s ease-in-out;
+}
+.form-container input:hover {
+  background-color: #535353;
+}
+
+.form-container input::placeholder {
+  color: #d1d1d1;
+}
+
+button.submit {
+  background-color: #0078d7;
+  color: white;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+button.submit:hover {
+  background-color: #0166b9;
+}
+
+/* * CARD CONTAINER */
+
+.card-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  padding: 20px;
+}
+.card {
+  background-color: #0078d7;
+  color: white;
+  width: 20rem;
+  max-width: 90%;
+  margin-bottom: 8px;
+  margin-right: 20px;
+  padding: 8px;
+  display: flex;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.card:hover {
+  background-color: #0166b9;
+}
+
+.card img {
+  width: 50px;
+  margin-right: 20px;
+}
+.card-text-primary {
+  color: white;
+}
+.card-text-secondary {
+  color: #d1d1d1;
 }
