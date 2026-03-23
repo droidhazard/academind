@@ -9,6 +9,7 @@ const peopleRoutes = require("./routes/people.routes");
 const projectsRoutes = require("./routes/projects.routes");
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.urlencoded());
 
 app.use(dashboardRoutes);
 app.use(peopleRoutes);
