@@ -4,7 +4,44 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: inherit;
 }
 body {
   font-family: sans-serif;
+}
+
+.main-header {
+  width: 100%;
+  background-color: #111111;
+  height: 3.5rem;
+}
+.main-header__nav {
+  height: 100%;
+}
+.main-header__list {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  list-style: none;
+  padding: 0 3.5rem;
+}
+.main-header__list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 120px;
+}
+.main-header__list-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: #d1d1d1;
+}
+.main-header__list-item a:hover,
+.main-header__list-item a:active {
+  background: #414141;
 }
