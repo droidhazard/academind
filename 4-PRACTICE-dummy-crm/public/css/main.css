@@ -42,6 +42,7 @@ body {
   color: #d1d1d1;
 }
 .main-header__list-item a:hover,
-.main-header__list-item a:active {
+.main-header__list-item a:active,
+.main-header__list-item a.active {
   background: #414141;
 }
