@@ -4,6 +4,7 @@ const path = require("path");
 const router = express.Router();
 const rootDir = require("../util/path");
 
+// * '/' dashboard page => GET
 router.get("/", (req, res) => {
   res.sendFile(path.join(rootDir, "views", "dashboard.html"));
 });
