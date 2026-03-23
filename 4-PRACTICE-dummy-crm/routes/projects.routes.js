@@ -5,12 +5,12 @@ const router = express.Router();
 const rootDir = require("../util/path");
 
 // * '/projects' page => GET
-router.get("/projects", (req, res) => {
+router.get("/", (req, res) => {
   res.sendFile(path.join(rootDir, "views", "projects.html"));
 });
 
 // * '/project' create project submissions => POST
-router.post("/projects", (req, res) => {
+router.post("/", (req, res) => {
   console.log(req.body);
   res.redirect("/projects");
 });

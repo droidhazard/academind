@@ -12,8 +12,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded());
 
 app.use(dashboardRoutes);
-app.use(peopleRoutes);
-app.use(projectsRoutes);
+app.use("/people", peopleRoutes);
+app.use("/projects", projectsRoutes);
 
 // * Handle 404 page
 app.use((req, res, next) => {
