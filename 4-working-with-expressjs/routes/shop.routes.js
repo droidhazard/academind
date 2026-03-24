@@ -11,7 +11,7 @@ router.get("/", (req, res, next) => {
   // res.sendFile(path.join(rootDir, "views", "shop.html"));
   // console.log(adminRoutes.products);
   const products = adminRoutes.products;
-  res.render("shop", { products: products, docTitle: "Shop" });
+  res.render("shop", { products: products, docTitle: "Shop", path: "/" });
 });
 
 // * Handle 404 page
