@@ -10,7 +10,8 @@ const router = express.Router();
 router.get("/", (req, res, next) => {
   // res.sendFile(path.join(rootDir, "views", "shop.html"));
   // console.log(adminRoutes.products);
-  res.render("shop");
+  const products = adminRoutes.products;
+  res.render("shop", { products: products, docTitle: "Shop" });
 });
 
 // * Handle 404 page
