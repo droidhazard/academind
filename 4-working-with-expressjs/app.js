@@ -1,11 +1,14 @@
 const path = require("path");
 
 const express = require("express");
+const expressHbs = require("express-handlebars");
 // const bodyParser = require("body-parser");
 
 const app = express();
+app.use(express.urlencoded());
 
-app.set("view engine", "pug");
+app.engine("hbs", expressHbs.engine({ defaultLayout: false }));
+app.set("view engine", "hbs");
 app.set("views", "views");
 
 const adminRoutes = require("./routes/admin.routes");
@@ -13,7 +16,6 @@ const shopRoutes = require("./routes/shop.routes");
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(express.urlencoded());
 app.use("/admin", adminRoutes.routes);
 app.use(shopRoutes);
 // app.use(bodyParser.urlencoded({ extended: false }));
