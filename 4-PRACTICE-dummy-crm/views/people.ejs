@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dummy CRM - People</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="main-header__nav">
+        <ul class="main-header__list">
+          <li class="main-header__list-item">
+            <a href="/">Home</a>
+          </li>
+          <li class="main-header__list-item">
+            <a href="/people" class="active">People</a>
+          </li>
+          <li class="main-header__list-item">
+            <a href="/projects">Projects</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-container">
+      <form action="/people" method="POST" class="form-container">
+        <h2>Add a contact</h2>
+        <input type="text" name="firstname" placeholder="First name" />
+        <input type="text" name="last" placeholder="Last name" />
+        <input type="text" name="address" placeholder="Address" />
+        <input type="text" name="email" placeholder="Email" />
+        <input type="text" name="phone" placeholder="Phone" />
+        <button type="submit" class="submit">Create Contact</button>
+      </form>
+
+      <div class="card-container">
+        <div class="card">
+          <img src="contact.png" alt="contact icon" />
+          <section>
+            <p class="card-text-primary">Droid GameZZ</p>
+            <p class="card-text-secondary">droid@gmail.com</p>
+            <p class="card-text-secondary">1024 GigaByte, Hard Disk</p>
+          </section>
+        </div>
+        <div class="card">
+          <img src="contact.png" alt="contact icon" />
+          <section>
+            <p class="card-text-primary">Droid GameZZ</p>
+            <p class="card-text-secondary">droid@gmail.com</p>
+            <p class="card-text-secondary">1024 GigaByte, Hard Disk</p>
+          </section>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
