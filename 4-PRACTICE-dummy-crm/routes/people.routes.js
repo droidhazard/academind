@@ -9,7 +9,10 @@ const peopleArray = [];
 // * '/people' page => GET
 router.get("/", (req, res) => {
   // res.sendFile(path.join(rootDir, "views", "people.html"));
-  res.render("people.ejs");
+  res.render("people.ejs", {
+    pageTitle: "People - Dummy CRM",
+    path: "/people",
+  });
 });
 
 // * 'people' create people submission => POST

@@ -9,7 +9,10 @@ const projectsArray = [];
 // * '/projects' page => GET
 router.get("/", (req, res) => {
   // res.sendFile(path.join(rootDir, "views", "projects.html"));
-  res.render("projects.ejs");
+  res.render("projects.ejs", {
+    pageTitle: "Projects - Dummy CRM",
+    path: "/projects",
+  });
 });
 
 // * '/project' create project submissions => POST
