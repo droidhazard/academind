@@ -34,22 +34,20 @@
       </form>
 
       <div class="card-container">
-        <div class="card">
-          <img src="task.png" alt="contact icon" />
-          <section>
-            <p class="card-text-primary">Front End</p>
-            <p class="card-text-secondary">Urgent</p>
-            <p class="card-text-secondary">01-01-2026</p>
-          </section>
-        </div>
-        <div class="card">
-          <img src="task.png" alt="contact icon" />
-          <section>
-            <p class="card-text-primary">Backend</p>
-            <p class="card-text-secondary">Normal</p>
-            <p class="card-text-secondary">02-02-2026</p>
-          </section>
-        </div>
+        <% if (projectsArray.length > 0) { %>
+          <% for (let item of projectsArray) { %>
+            <div class="card">
+              <img src="task.png" alt="contact icon" />
+              <section>
+                <p class="card-text-primary"><%= item.title %></p>
+                <p class="card-text-secondary"><%= item.priority %></p>
+                <p class="card-text-secondary"><%= item.duedate %></p>
+              </section>
+            </div>
+          <% } %>
+        <% } else { %>
+          <h2 style="color:white;">It's empty here...</h2>
+        <% } %>
       </div>
     </main>
   </body>

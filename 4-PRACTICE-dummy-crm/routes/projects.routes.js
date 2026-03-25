@@ -12,6 +12,7 @@ router.get("/", (req, res) => {
   res.render("projects.ejs", {
     pageTitle: "Projects - Dummy CRM",
     path: "/projects",
+    projectsArray: projectsArray,
   });
 });
 
@@ -19,7 +20,7 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
   // console.log(req.body);
   projectsArray.push(req.body);
-  // console.log(projectsArray);
+  console.log(projectsArray);
   res.redirect("/projects");
 });
 

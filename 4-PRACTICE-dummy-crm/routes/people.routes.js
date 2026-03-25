@@ -12,6 +12,7 @@ router.get("/", (req, res) => {
   res.render("people.ejs", {
     pageTitle: "People - Dummy CRM",
     path: "/people",
+    peopleArray: peopleArray,
   });
 });
 
