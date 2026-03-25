@@ -4,6 +4,8 @@ const path = require("path");
 const router = express.Router();
 const rootDir = require("../util/path");
 
+const peopleArray = [];
+
 // * '/people' page => GET
 router.get("/", (req, res) => {
   res.sendFile(path.join(rootDir, "views", "people.html"));
@@ -11,7 +13,11 @@ router.get("/", (req, res) => {
 
 // * 'people' create people submission => POST
 router.post("/", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
+  peopleArray.push(req.body);
+  // console.log(peopleArray);
   res.redirect("/people");
 });
-module.exports = router;
+
+exports.routes = router;
+exports.peopleArray = peopleArray;
