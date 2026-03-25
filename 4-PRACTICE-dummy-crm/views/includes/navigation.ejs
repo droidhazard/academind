@@ -2,15 +2,17 @@
   <nav class="main-header__nav">
     <ul class="main-header__list">
       <li class="main-header__list-item">
-        <a href="/">Home</a>
+        <a href="/" class=<%= path==='/' ? 'active' : '' %>>Home</a>
       </li>
-      <li class="main-header__list-item"><a href="/people">People</a></li>
+      <li class="main-header__list-item"><a href="/people" class=<%= path==='/people' ? 'active' : '' %>>People</a></li>
       <li class="main-header__list-item">
-        <a href="/projects">Projects</a>
+        <a href="/projects" class=<%= path==='/projects' ? 'active' : '' %>>Projects</a>
       </li>
-      <li class="main-header__list-item">
-        <a href="/egg">🥚</a>
-      </li>
+      <% if (path === 'egg') { %>
+        <li class="main-header__list-item">
+          <a href="/egg">🥚</a>
+        </li>
+      <% } %>
     </ul>
   </nav>
 </header>
