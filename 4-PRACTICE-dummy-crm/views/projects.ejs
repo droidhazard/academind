@@ -1,25 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= pageTitle %></title>
-    <link rel="stylesheet" href="/css/main.css" />
-  </head>
+<%- include('./includes/head.ejs') %>
   <body>
-    <header class="main-header">
-      <nav class="main-header__nav">
-        <ul class="main-header__list">
-          <li class="main-header__list-item">
-            <a href="/">Home</a>
-          </li>
-          <li class="main-header__list-item"><a href="/people">People</a></li>
-          <li class="main-header__list-item">
-            <a href="/projects" class="active">Projects</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+<%- include('./includes/navigation.ejs') %>
 
     <main class="main-container">
       <form action="/projects" method="POST" class="form-container">
@@ -50,5 +31,4 @@
         <% } %>
       </div>
     </main>
-  </body>
-</html>
+<%- include('./includes/end.ejs') %>
