@@ -1,21 +1,23 @@
 const path = require("path");
 
 const express = require("express");
-const expressHbs = require("express-handlebars");
+// const expressHbs = require("express-handlebars");
 // const bodyParser = require("body-parser");
 
 const app = express();
 app.use(express.urlencoded());
 
-app.engine(
-  "hbs",
-  expressHbs.engine({
-    defaultLayout: "main-layout",
-    layoutsDir: "./views/layouts",
-    extname: "hbs",
-  }),
-);
-app.set("view engine", "hbs");
+// ^ Handlebars options
+// app.engine(
+//   "hbs",
+//   expressHbs.engine({
+//     defaultLayout: "main-layout",
+//     layoutsDir: "./views/layouts",
+//     extname: "hbs",
+//   }),
+// );
+
+app.set("view engine", "ejs");
 app.set("views", "views");
 
 const adminRoutes = require("./routes/admin.routes");
