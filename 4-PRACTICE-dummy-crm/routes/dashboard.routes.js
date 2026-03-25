@@ -6,7 +6,8 @@ const rootDir = require("../util/path");
 
 // * '/' dashboard page => GET
 router.get("/", (req, res) => {
-  res.sendFile(path.join(rootDir, "views", "dashboard.html"));
+  // res.sendFile(path.join(rootDir, "views", "dashboard.html"));
+  res.render("dashboard.ejs");
 });
 
 module.exports = router;

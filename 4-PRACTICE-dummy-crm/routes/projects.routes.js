@@ -8,7 +8,8 @@ const projectsArray = [];
 
 // * '/projects' page => GET
 router.get("/", (req, res) => {
-  res.sendFile(path.join(rootDir, "views", "projects.html"));
+  // res.sendFile(path.join(rootDir, "views", "projects.html"));
+  res.render("projects.ejs");
 });
 
 // * '/project' create project submissions => POST

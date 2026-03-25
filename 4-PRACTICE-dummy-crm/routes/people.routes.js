@@ -8,7 +8,8 @@ const peopleArray = [];
 
 // * '/people' page => GET
 router.get("/", (req, res) => {
-  res.sendFile(path.join(rootDir, "views", "people.html"));
+  // res.sendFile(path.join(rootDir, "views", "people.html"));
+  res.render("people.ejs");
 });
 
 // * 'people' create people submission => POST
