@@ -23,13 +23,15 @@ exports.getProducts = (req, res, next) => {
   // res.sendFile(path.join(rootDir, "views", "shop.html"));
   // console.log(adminRoutes.products);
   //   const products = adminRoutes.products;
-  const products = Product.fetchAll();
-  res.render("shop", {
-    products: products,
-    docTitle: "Shop",
-    path: "/",
-    hasProducts: products.length > 0 ? true : false,
-    productCSS: true,
-    active_shop: true,
+  Product.fetchAll((products) => {
+    console.log(products);
+    res.render("shop", {
+      products: products,
+      docTitle: "Shop",
+      path: "/",
+      hasProducts: products.length > 0 ? true : false,
+      productCSS: true,
+      active_shop: true,
+    });
   });
 };
