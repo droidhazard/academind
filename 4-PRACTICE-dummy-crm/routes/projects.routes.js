@@ -2,27 +2,13 @@ const express = require("express");
 const path = require("path");
 
 const router = express.Router();
-const rootDir = require("../util/path");
-
-const projectsArray = [];
+// const rootDir = require("../util/path");
+const projectsController = require("../controllers/projects.controller");
 
 // * '/projects' page => GET
-router.get("/", (req, res) => {
-  // res.sendFile(path.join(rootDir, "views", "projects.html"));
-  res.render("projects.ejs", {
-    pageTitle: "Projects - Dummy CRM",
-    path: "/projects",
-    projectsArray: projectsArray,
-  });
-});
+router.get("/", projectsController.getProjects);
 
 // * '/project' create project submissions => POST
-router.post("/", (req, res) => {
-  // console.log(req.body);
-  projectsArray.push(req.body);
-  console.log(projectsArray);
-  res.redirect("/projects");
-});
+router.post("/", projectsController.addProject);
 
 exports.routes = router;
-exports.projectsArray = projectsArray;

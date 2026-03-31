@@ -1,16 +1,11 @@
 const express = require("express");
-const path = require("path");
+// const path = require("path");
 
 const router = express.Router();
-const rootDir = require("../util/path");
+// const rootDir = require("../util/path");
+const dashboardController = require("../controllers/dashboard.controller");
 
 // * '/' dashboard page => GET
-router.get("/", (req, res) => {
-  // res.sendFile(path.join(rootDir, "views", "dashboard.html"));
-  res.render("dashboard.ejs", {
-    pageTitle: "Dashboard - Dummy CRM",
-    path: "/",
-  });
-});
+router.get("/", dashboardController.getDashboard);
 
 module.exports = router;
