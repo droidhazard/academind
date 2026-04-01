@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path");
 
 const router = express.Router();
-// const rootDir = require("../util/path");
 const projectsController = require("../controllers/projects.controller");
 
 // * '/projects' page => GET
